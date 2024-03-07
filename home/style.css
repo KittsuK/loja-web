@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/background_phone.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover; 
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrap-everything{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vh;
+
+}
+
+.wrap-img{
+     animation: fromTop 2s linear;
+}
+
+@keyframes fromTop{
+    0%{
+        opacity: 0.1;
+        transform: translateY(-200px);
+
+    }
+    100%{
+        opacity: 0.85;
+        transform: translateY(0px);
+    }
+}
+
+.img-style{
+    opacity: 0.85;
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px 10px black;
+}
+
+p{
+    color: aliceblue;
+    font-family: "Play", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 0px 0px 10px 10px black;
+    transition:  2s linear;
+    animation: show 2s linear;
+    font-weight: 900;
+    letter-spacing: 10px;
+}
+
+.p1{
+    animation: show2 2s linear;
+}
+
+@keyframes show {
+    from{
+        transform: translatex(200px);
+        opacity: 0.1;
+    }
+    to{
+        transform: translatex(0px);
+        opacity: 1;
+    }
+}
+@keyframes show2 {
+    from{
+        transform: translatex(-200px);
+        opacity: 0.1;
+    }
+    to{
+        transform: translatex(0px);
+        opacity: 1;
+    }
+}
+
+@media (width >= 1240px){
+    body{
+        background-image: url(../images/background.png);
+    }
+    .img-style{
+       width: 400px;
+       height: 400px;
+    }
+    p{
+        font-size: 8rem;
+        transition: all 200ms linear;
+    }
+    p:hover{
+        cursor: pointer;
+        transition: all 200ms linear;
+
+    }
+}

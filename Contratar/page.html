@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Protest+Revolution&display=swap" rel="stylesheet">
+    <script src="./script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Play:wght@400;700&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="error" class="error-modal">
+      <p>Insira um nome para começar</p>
+      <br />
+      <button class="error-btn" onclick="fechar()">Entendi!!!</button>
+    </div>
+    <div>
+        <button onclick="window.location.href='../home/page.html'" type="button" class="btn btn-dark">Tela Principal</button>
+        <button onclick="window.location.href='../Serviços/page.html'" type="button" class="btn btn-dark">Serviços á contratar</button>
+        <button onclick="window.location.href='../Contratar/page.html'" type="button" class="btn btn-secondary">Contratar serviços</button>
+      </div>
+    <h1>Contratar Serviços.</h1>
+    <p>Antes de começarmos a contratar seu serviço, nos diga seu nome</p>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Nome</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Insira seu nome"
+      />
+    </div>
+    <button onclick="comecar()" type="button" class="btn btn-dark">
+      Começar
+    </button>
+
+    <div id="selects-div">
+      <h2>Olá <span id="nomePrint"></span>, agora vamos começar a escolher seus serviços!!</h2>
+      <h3>Escolha os serviços desejados:</h3>
+      <br>
+      <h5>Éticamente errados</h5>
+      <select
+        id="selectErrado"
+        class="form-select"
+        aria-label="Default select example"
+      >
+        <option selected>Selecione um serviço</option>
+        <option value="Hackear uma escola">Hackear uma escola</option>
+        <option value="Hackear uma empresa">Hackear uma empresa</option>
+        <option value="Hackear um amigo">Hackear um amigo</option>
+        <option value="Hackear algo a sua escolha">Hackear algo a sua escolha</option>
+      </select>
+      <br>
+      <h5>Éticamente questionáveis</h5>
+      <select
+        id="selecQuestion"
+        class="form-select"
+        aria-label="Default select example"
+      >
+        <option selected>Selecione um serviço</option>
+        <option value="Criar propagandas falsas">Criar propagandas falsas</option>
+        <option value="Criar jogos pay2win">Criar jogos pay2win</option>
+        <option value="Gerar inscritos falsos para um canal">Gerar inscritos falsos para um canal</option>
+        <option value="Gerar seguidores para redes sociais">Gerar seguidores para redes sociais</option>
+      </select>
+      <br>
+      <h5>Serviços convencionais</h5>
+      <select
+        id="selectConv"
+        class="form-select"
+        aria-label="Default select example"
+      >
+        <option selected>Selecione um serviço</option>
+        <option value="Resolver erro de codigo">Resolver erro de código</option>
+        <option value="Fazer um site de segurança comum">Fazer um site de segurança comum</option>
+        <option value="Fazer um jogo simples para computador">Fazer um jogo simples para computador</option>
+        <option value="Fazer um wallpaper (pc e celular) animado">Fazer um wallpaper (pc e celular) animado</option>
+      </select>
+      <br />
+      <button
+        onclick="calcularTotal()"
+        type="button"
+        class="btn btn-outline-success"
+      >
+        Fazer pedido
+      </button>
+      <button onclick="limpar()" type="button" class="btn btn-outline-warning">
+        Limpar
+      </button>
+    </div>
+    <br />
+
+    <div class="totalDiv" id="total">
+      <div>
+        <span class="badge bg-primary">Total:</span>
+        <span class="badge bg-secondary" id="resultado"></span>
+      </div>
+      <br />
+      <div>
+        <p>Éticamente errado:</p>
+        <p id="error"></p>
+        <p>Bebida:</p>
+        <p id="quest"></p>
+        <p>Sobremesa:</p>
+        <p id="conv"></p>
+        <br />
+      </div>
+    </div>
+  </body>
+</html>
